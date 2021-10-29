@@ -1,0 +1,321 @@
+<<<<<<< HEAD
+﻿<?xml version="1.0" encoding="utf-8"?>
+=======
+<?xml version="1.0" encoding="utf-8"?>
+>>>>>>> 1d27db077bd39b7ef898b04f6c6d5cb17e5274b8
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+<<<<<<< HEAD
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{4F25CED4-BB8F-824B-04CE-33F1707760A0}</ProjectGuid>
+    <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
+    <Keyword>Win32Proj</Keyword>
+=======
+  <ItemGroup>
+    <ClInclude Include="App.h" />
+    <ClInclude Include="Core.h" />
+    <ClInclude Include="Entrypoint.h" />
+    <ClInclude Include="GeekPizza.h" />
+    <ClInclude Include="Log.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="App.cpp" />
+    <ClCompile Include="Log.cpp" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{58d38933-c23b-42a8-944d-9e3ea58b896b}</ProjectGuid>
+>>>>>>> 1d27db077bd39b7ef898b04f6c6d5cb17e5274b8
+    <RootNamespace>GeekPizza</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+<<<<<<< HEAD
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+=======
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+>>>>>>> 1d27db077bd39b7ef898b04f6c6d5cb17e5274b8
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+<<<<<<< HEAD
+=======
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+>>>>>>> 1d27db077bd39b7ef898b04f6c6d5cb17e5274b8
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+<<<<<<< HEAD
+    <OutDir>..\bin\Debug-windows-x86_64\GeekPizza\</OutDir>
+    <IntDir>..\bin-int\Debug-windows-x86_64\GeekPizza\</IntDir>
+    <TargetName>GeekPizza</TargetName>
+    <TargetExt>.dll</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\bin\Release-windows-x86_64\GeekPizza\</OutDir>
+    <IntDir>..\bin-int\Release-windows-x86_64\GeekPizza\</IntDir>
+    <TargetName>GeekPizza</TargetName>
+    <TargetExt>.dll</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>GP_PLATFORM_WINDOWS;GP_BUILD_DLL;SPDLOG_COMPILED_LIB;GP_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>thirdParty\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ImportLibrary>..\bin\Debug-windows-x86_64\GeekPizza\GeekPizza.lib</ImportLibrary>
+    </Link>
+    <PostBuildEvent>
+      <Command>IF EXIST ..\bin\Debug-windows-x86_64\GeekPizza\GeekPizza.dll\ (xcopy /Q /E /Y /I ..\bin\Debug-windows-x86_64\GeekPizza\GeekPizza.dll ..\bin\Debug-windows-x86_64\testGame &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug-windows-x86_64\GeekPizza\GeekPizza.dll ..\bin\Debug-windows-x86_64\testGame &gt; nul)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>GP_PLATFORM_WINDOWS;GP_BUILD_DLL;SPDLOG_COMPILED_LIB;GP_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>thirdParty\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ImportLibrary>..\bin\Release-windows-x86_64\GeekPizza\GeekPizza.lib</ImportLibrary>
+    </Link>
+    <PostBuildEvent>
+      <Command>IF EXIST ..\bin\Release-windows-x86_64\GeekPizza\GeekPizza.dll\ (xcopy /Q /E /Y /I ..\bin\Release-windows-x86_64\GeekPizza\GeekPizza.dll ..\bin\Release-windows-x86_64\testGame &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Release-windows-x86_64\GeekPizza\GeekPizza.dll ..\bin\Release-windows-x86_64\testGame &gt; nul)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="App.h" />
+    <ClInclude Include="Core.h" />
+    <ClInclude Include="Entrypoint.h" />
+    <ClInclude Include="GeekPizza.h" />
+    <ClInclude Include="Log.h" />
+    <ClInclude Include="thirdParty\benchmark\benchmark.h" />
+    <ClInclude Include="thirdParty\spdlog\include\benchmark\benchmark.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\async.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\async_logger-inl.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\async_logger.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\cfg\argv.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\cfg\env.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\cfg\helpers-inl.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\cfg\helpers.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\common-inl.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\common.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\details\backtracer-inl.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\details\backtracer.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\details\circular_q.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\details\console_globals.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\details\file_helper-inl.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\details\file_helper.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\details\fmt_helper.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\details\log_msg-inl.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\details\log_msg.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\details\log_msg_buffer-inl.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\details\log_msg_buffer.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\details\mpmc_blocking_q.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\details\null_mutex.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\details\os-inl.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\details\os.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\details\periodic_worker-inl.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\details\periodic_worker.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\details\registry-inl.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\details\registry.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\details\synchronous_factory.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\details\tcp_client-windows.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\details\tcp_client.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\details\thread_pool-inl.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\details\thread_pool.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\details\windows_include.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\fmt\bin_to_hex.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\fmt\bundled\args.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\fmt\bundled\chrono.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\fmt\bundled\color.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\fmt\bundled\compile.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\fmt\bundled\core.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\fmt\bundled\format-inl.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\fmt\bundled\format.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\fmt\bundled\locale.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\fmt\bundled\os.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\fmt\bundled\ostream.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\fmt\bundled\printf.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\fmt\bundled\ranges.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\fmt\bundled\xchar.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\fmt\chrono.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\fmt\compile.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\fmt\fmt.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\fmt\ostr.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\fmt\xchar.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\formatter.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\fwd.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\logger-inl.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\logger.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\pattern_formatter-inl.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\pattern_formatter.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\sinks\android_sink.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\sinks\ansicolor_sink-inl.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\sinks\ansicolor_sink.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\sinks\base_sink-inl.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\sinks\base_sink.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\sinks\basic_file_sink-inl.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\sinks\basic_file_sink.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\sinks\daily_file_sink.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\sinks\dist_sink.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\sinks\dup_filter_sink.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\sinks\hourly_file_sink.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\sinks\mongo_sink.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\sinks\msvc_sink.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\sinks\null_sink.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\sinks\ostream_sink.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\sinks\qt_sinks.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\sinks\ringbuffer_sink.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\sinks\rotating_file_sink-inl.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\sinks\rotating_file_sink.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\sinks\sink-inl.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\sinks\sink.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\sinks\stdout_color_sinks-inl.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\sinks\stdout_color_sinks.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\sinks\stdout_sinks-inl.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\sinks\stdout_sinks.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\sinks\syslog_sink.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\sinks\tcp_sink.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\sinks\win_eventlog_sink.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\sinks\wincolor_sink-inl.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\sinks\wincolor_sink.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\spdlog-inl.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\spdlog.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\stopwatch.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\tweakme.h" />
+    <ClInclude Include="thirdParty\spdlog\include\spdlog\version.h" />
+    <ClInclude Include="thirdParty\spdlog\tests\includes.h" />
+    <ClInclude Include="thirdParty\spdlog\tests\test_sink.h" />
+    <ClInclude Include="thirdParty\spdlog\tests\utils.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="App.cpp" />
+    <ClCompile Include="Log.cpp" />
+    <ClCompile Include="thirdParty\spdlog\example\example.cpp" />
+    <ClCompile Include="thirdParty\spdlog\src\async.cpp" />
+    <ClCompile Include="thirdParty\spdlog\src\cfg.cpp" />
+    <ClCompile Include="thirdParty\spdlog\src\color_sinks.cpp" />
+    <ClCompile Include="thirdParty\spdlog\src\file_sinks.cpp" />
+    <ClCompile Include="thirdParty\spdlog\src\fmt.cpp" />
+    <ClCompile Include="thirdParty\spdlog\src\spdlog.cpp" />
+    <ClCompile Include="thirdParty\spdlog\src\stdout_sinks.cpp" />
+    <ClCompile Include="thirdParty\spdlog\tests\main.cpp" />
+    <ClCompile Include="thirdParty\spdlog\tests\test_async.cpp" />
+    <ClCompile Include="thirdParty\spdlog\tests\test_backtrace.cpp" />
+    <ClCompile Include="thirdParty\spdlog\tests\test_cfg.cpp" />
+    <ClCompile Include="thirdParty\spdlog\tests\test_create_dir.cpp" />
+    <ClCompile Include="thirdParty\spdlog\tests\test_daily_logger.cpp" />
+    <ClCompile Include="thirdParty\spdlog\tests\test_dup_filter.cpp" />
+    <ClCompile Include="thirdParty\spdlog\tests\test_errors.cpp" />
+    <ClCompile Include="thirdParty\spdlog\tests\test_eventlog.cpp" />
+    <ClCompile Include="thirdParty\spdlog\tests\test_file_helper.cpp" />
+    <ClCompile Include="thirdParty\spdlog\tests\test_file_logging.cpp" />
+    <ClCompile Include="thirdParty\spdlog\tests\test_fmt_helper.cpp" />
+    <ClCompile Include="thirdParty\spdlog\tests\test_macros.cpp" />
+    <ClCompile Include="thirdParty\spdlog\tests\test_misc.cpp" />
+    <ClCompile Include="thirdParty\spdlog\tests\test_mpmc_q.cpp" />
+    <ClCompile Include="thirdParty\spdlog\tests\test_pattern_formatter.cpp" />
+    <ClCompile Include="thirdParty\spdlog\tests\test_registry.cpp" />
+    <ClCompile Include="thirdParty\spdlog\tests\test_stdout_api.cpp" />
+    <ClCompile Include="thirdParty\spdlog\tests\test_stopwatch.cpp" />
+    <ClCompile Include="thirdParty\spdlog\tests\test_time_point.cpp" />
+    <ClCompile Include="thirdParty\spdlog\tests\utils.cpp" />
+  </ItemGroup>
+=======
+    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\$(ProjectName)\</OutDir>
+    <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>GP_PLATFORM_WINDOWS;GP_BUILD_DLL;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)GeekPizza\thirdParty\spdlog\include;</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>GP_PLATFORM_WINDOWS;GP_BUILD_DLL;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)GeekPizza\thirdParty\spdlog\include;</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+>>>>>>> 1d27db077bd39b7ef898b04f6c6d5cb17e5274b8
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
