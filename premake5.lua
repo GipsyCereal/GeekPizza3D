@@ -10,8 +10,8 @@ outputDirectory = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 --ENGINE-///////////////////////////////////////////////////
 
-project "GeekPizza"
-	location "GeekPizza" --Choose folder GeekPizza
+project "GeekPizzaEngine"
+	location "GeekPizzaEngine" --Choose folder GeekPizza
 	kind "SharedLib" --dynamic library specification (engine)
 	language "C++"
 	targetdir ("bin/" .. outputDirectory .. "/%{prj.name}") -- .. var .. == appending
@@ -25,7 +25,7 @@ project "GeekPizza"
 
 	includedirs 
 	{
-		"%{prj.name}/thirdParty/spdlog/include"
+		"%{prj.name}/GeekPizzaEngine/thirdParty/spdlog/include"
 	}
 	
 	-- filters are for platform bound configurations
