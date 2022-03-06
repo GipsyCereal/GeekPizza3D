@@ -1,5 +1,4 @@
 #pragma once
-#include <memory>
 #include "Core.h"
 
 #include "spdlog/spdlog.h"
@@ -15,7 +14,6 @@ namespace GeekPizza
 		Log();
 		static std::shared_ptr<spdlog::logger> m_CoreLogger;
 		static std::shared_ptr<spdlog::logger> m_ClientLogger;
-
 	};
 }
 

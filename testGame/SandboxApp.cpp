@@ -1,4 +1,4 @@
-#include <GeekPizzaEngine.h>
+#include <GeekPizza/GeekPizzaEngine.h>
 
 class Sandbox : public GeekPizza::App
 {

@@ -1,31 +1,33 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="App.cpp" />
-    <ClCompile Include="Log.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="App.h" />
-    <ClInclude Include="Core.h" />
-    <ClInclude Include="Entrypoint.h" />
-    <ClInclude Include="GeekPizzaEngine.h" />
-    <ClInclude Include="Log.h" />
-    <ClInclude Include="Events\Event.h">
-      <Filter>Events</Filter>
-    </ClInclude>
-    <ClInclude Include="Events\KeyEvent.h">
-      <Filter>Events</Filter>
-    </ClInclude>
-    <ClInclude Include="Events\MouseEvent.h">
-      <Filter>Events</Filter>
-    </ClInclude>
-    <ClInclude Include="Events\ApplicationEvent.h">
-      <Filter>Events</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
     <Filter Include="Events">
-      <UniqueIdentifier>{70e28ab9-7b7b-4e83-b831-67b568e78a25}</UniqueIdentifier>
+      <UniqueIdentifier>{3A8963B1-262B-8E87-0FE6-A1DBFB2615D8}</UniqueIdentifier>
     </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\GeekPizza\App.h" />
+    <ClInclude Include="src\GeekPizza\Core.h" />
+    <ClInclude Include="src\GeekPizza\Entrypoint.h" />
+    <ClInclude Include="src\GeekPizza\Events\ApplicationEvent.h">
+      <Filter>Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GeekPizza\Events\Event.h">
+      <Filter>Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GeekPizza\Events\KeyEvent.h">
+      <Filter>Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GeekPizza\Events\MouseEvent.h">
+      <Filter>Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GeekPizza\GeekPizzaEngine.h" />
+    <ClInclude Include="src\GeekPizza\Log.h" />
+    <ClInclude Include="src\GeekPizza\gppch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GeekPizza\App.cpp" />
+    <ClCompile Include="src\GeekPizza\Log.cpp" />
+    <ClCompile Include="src\GeekPizza\gppch.cpp" />
   </ItemGroup>
 </Project>

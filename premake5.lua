@@ -2,10 +2,11 @@
 workspace "GeekPizza"
 	architecture "x64"
 
-configurations{
-"Debug",
-"Release"
-}
+	configurations{
+		"Debug",
+		"Release",
+		"Dist"
+	}
 outputDirectory = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 --ENGINE-///////////////////////////////////////////////////
@@ -17,15 +18,19 @@ project "GeekPizzaEngine"
 	targetdir ("bin/" .. outputDirectory .. "/%{prj.name}") -- .. var .. == appending
 	objdir ("bin-int/" .. outputDirectory .. "/%{prj.name}") -- obj files
 
+	pchheader "gppch.h"
+	pchsource "GeekPizzaEngine/src/GeekPizza/gppch.cpp"
+
 	files
 	{
-		"%{prj.name}/**.h",
-		"%{prj.name}/**.cpp"
+		"%{prj.name}/src/**.h",
+		"%{prj.name}/src/**.cpp"
 	}
 
 	includedirs 
 	{
-		"%{prj.name}/GeekPizzaEngine/thirdParty/spdlog/include"
+		"%{prj.name}/src/GeekPizza",
+		"%{prj.name}/thirdParty/spdlog/include"
 	}
 	
 	-- filters are for platform bound configurations
@@ -36,8 +41,7 @@ project "GeekPizzaEngine"
 		defines
 		{
 			"GP_PLATFORM_WINDOWS",
-			"GP_BUILD_DLL",
-			"SPDLOG_COMPILED_LIB"
+			"GP_BUILD_DLL"
 		}
 		postbuildcommands
 		{
@@ -75,12 +79,12 @@ project "testGame"
 
 	includedirs
 	{
-		"GeekPizza/thirdParty/spdlog/include", 
-		"GeekPizza" --proj name here is "testGame" so type GeekPizza instead of %{prj.name}
+		"GeekPizzaEngine/thirdParty/spdlog/include", 
+		"GeekPizzaEngine/src" --proj name here is "testGame" so type GeekPizzaEngine instead of %{prj.name}
 	}
 	links
 	{
-		"GeekPizza"
+		"GeekPizzaEngine"
 	}
 	
 	-- filters are for platform bound configurations

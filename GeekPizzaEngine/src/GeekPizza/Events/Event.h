@@ -1,8 +1,7 @@
 #pragma once
-#include "../Core.h"
-
-#include <string>
-#include <functional>
+#include "gppch.h"
+#include "spdlog/fmt/ostr.h" //ostream overloading
+#include "Core.h"
 
 namespace GeekPizza 
 {
@@ -75,7 +74,7 @@ namespace GeekPizza
 		{
 			if (m_Event.GetEventType == T::GetStaticType())
 			{
-				m_Event.m_IsHandled = func((static_cast<T&>m_Event); //cast the Event m_Event to the actual EventType of the Event, pass that to func
+				m_Event.m_IsHandled = func(static_cast<T&>m_Event); //cast the Event m_Event to the actual EventType of the Event, pass that to func
 				return true;
 			}
 			return false;
